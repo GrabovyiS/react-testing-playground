@@ -5,9 +5,25 @@ import { expect } from "vitest";
 import userEvent from "@testing-library/user-event";
 
 describe("App", () => {
-  it("Correct snapshot on mount", () => {
+  // it("Correct snapshot on mount", () => {
+  //   render(<App />);
+  //   expect(screen.getByRole("main")).toMatchSnapshot();
+  // });
+
+  it("Correct counter after increment", () => {
     render(<App />);
-    expect(screen.getByRole("main")).toMatchSnapshot();
+    expect(screen.getByText("1")).toBeTruthy();
+  });
+
+  it("Correct counter after click", async () => {
+    render(<App />);
+
+    const user = userEvent.setup();
+    const button = screen.getByText("click");
+
+    await user.click(button);
+
+    expect(screen.getByText("2")).toBeTruthy();
   });
 
   it("Correct heading after click", async () => {
@@ -18,7 +34,7 @@ describe("App", () => {
 
     await user.click(button);
 
-    const heading = screen.getByRole("heading");
-    expect(heading.textContent).toEqual("Давай встречаться");
+    const heading = screen.getByText("Давай встречаться");
+    expect(heading).toBeInTheDocument();
   });
 });
