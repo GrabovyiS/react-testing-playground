@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`App > Correct snapshot on mount 1`] = `
+<main>
+  <h1>
+    Я тебя люблю
+  </h1>
+  <button
+    type="button"
+  >
+    Change heading
+  </button>
+</main>
+`;
