@@ -11,6 +11,7 @@ describe("App", () => {
   });
 
   it("Correct heading after click", async () => {
+    // Important note: things unmount after every test
     render(<App />);
     const user = userEvent.setup();
     const button = screen.getByRole("button");
