@@ -29,6 +29,7 @@ describe("App", () => {
   it("Correct heading after click", async () => {
     // Important note: things unmount after every test
     render(<App />);
+    // The thing is - react testing library's helper functions are already wrapped with act();
     const user = userEvent.setup();
     const button = screen.getByRole("button");
 
