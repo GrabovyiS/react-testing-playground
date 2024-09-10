@@ -1,5 +1,4 @@
 import { render, screen } from "@testing-library/react";
-
 import App from "./App";
 import { expect } from "vitest";
 import userEvent from "@testing-library/user-event";
@@ -19,7 +18,7 @@ describe("App", () => {
     render(<App />);
 
     const user = userEvent.setup();
-    const button = screen.getByText("click");
+    const button = screen.getByText("click me increment");
 
     await user.click(button);
 

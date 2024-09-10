@@ -1,0 +1,16 @@
+.poke-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid white;
+  border-radius: 4px;
+  padding: 16px;
+  background-color: grey;
+  min-width: 140px;
+  min-height: 210px;
+
+  img {
+    width: 96px;
+  }
+}
